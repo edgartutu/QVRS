@@ -9,6 +9,7 @@ cd into the front-end folder and run **npm install** to install all packages
 run 
 **npm run serve** to start the app
 
+![alt text](https://github.com/edgartutu/QVRS/arc.png)
 
 
 
