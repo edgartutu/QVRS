@@ -5,11 +5,19 @@ cd in to back-end folder where we find a requirements.txt file
 run **pip install -r requirements.txt**
 To run the back end **python main.py**
 
+
 cd into the front-end folder and run **npm install** to install all packages
 run 
 **npm run serve** to start the app
 
-![alt text](https://github.com/edgartutu/QVRS/arc.png)
+## expectations
+The server side should be re-structured to make sure that all the candidates can be captured automatically with thier political partys and symbols.ie the system can be reused even when candidates change.
+
+## architectural
+
+![alt text](https://github.com/edgartutu/QVRS/blob/master/arc.PNG)
+
+
 
 
 
