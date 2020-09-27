@@ -15,7 +15,7 @@ login_manager=LoginManager()
 
 app=Flask(__name__)
 
-admin=Admin(app)
+# admin=Admin(app)
 login=LoginManager(app)
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587

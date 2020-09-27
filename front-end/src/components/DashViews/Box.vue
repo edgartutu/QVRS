@@ -49,7 +49,7 @@ export default {
 -webkit-animation-name: animation;
 -webkit-animation-timing-function: ease-in-out;
 -webkit-animation-iteration-count: infinite;
--webkit-animation-duration: 10s;
+-webkit-animation-duration: 15s;
 
 -webkit-transform-style: preserve-3d;
 -webkit-transform-origin: 50px 50px 0;
@@ -109,4 +109,8 @@ from,to{}
     100% { transform: rotateY(360deg); }
 
 }
+#box:hover {
+  -webkit-animation-play-state: running;
+        animation-play-state: running;
+   }
 </style>

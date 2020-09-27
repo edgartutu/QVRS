@@ -25,7 +25,7 @@ import collections
 import gspread
 import itertools as it
 import functools
-import pandas as pd
+##import pandas as pd
 from oauth2client.service_account import ServiceAccountCredentials
 import operator
 from sqlalchemy.sql import func
@@ -79,7 +79,7 @@ class Register2(Resource):
         else:
             return {'error':'Could not creat account'}
 
-##application login function
+
 class LoginHeadquaters(Resource):
     def post(self):
         #data = request.authorization
@@ -96,8 +96,7 @@ class LoginHeadquaters(Resource):
 
 
                         
-##pulls data from the excel document to the results table
-##calculates totals for all candidates and puts them to presidential table together with hc-keys from geo json map file
+
 class GetSheetDtata(Resource):
     def get(self):
         p=[]
@@ -254,7 +253,7 @@ class GetSheetDtata(Resource):
             db.session.add(update)
             db.session.commit()
             
-##resource to manipulate data from the geo json mapfile to align hc-keys to respective districts          
+            
 class MapData(Resource):
     def get(self):
         get_data=Results.query.all()
@@ -360,7 +359,7 @@ class MapData(Resource):
             db.session.commit()
         
                 
-##map data in exact high chart format           
+           
 class SendMapData(Resource):
     @token_required
     def get(self,current_user):
@@ -382,7 +381,7 @@ class SendMapData(Resource):
         return sata
                 
                     
-##calculates totals of candidates overall                   
+                    
 class GetPresidentailCandidates(Resource):
     @token_required
     def get(self,current_user):
@@ -404,7 +403,7 @@ class GetPresidentailCandidates(Resource):
             
             return {"cand1":item[0],"cand2":item[1],"cand3":item[2],"cand4":item[3],"cand5":item[4],"cand6":item[5],"cand7":item[6],"cand8":item[7]}
         
-##gets candidates results from district to subcounty to parish to polling station            
+            
 class Candidates(Resource):
     @token_required
     def post(self,current_user):
@@ -505,7 +504,7 @@ class Candidates(Resource):
         else:
             return {"eror":"passed"}
         
-##get subcounties in a district
+
 class candidateDistrict(Resource):
     @token_required
     def post(self,current_user):
@@ -524,7 +523,7 @@ class candidateDistrict(Resource):
             return drop
         else:
             return {"eror":"passed"}
-##get parishes in a subcounty
+
 class candidateParish(Resource):
     @token_required
     def post(self,current_user):
@@ -594,7 +593,7 @@ class polling_file(Resource):
         for file in os.listdir(app.config['UPLOAD_FOLDER']):
             list_.append({"text":file})
         return list_
-##get diclaration form
+
 class single_file(Resource):
     
     def post(self):
